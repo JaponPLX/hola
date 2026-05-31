@@ -1,0 +1,83 @@
+/* --- ESTILOS BASE --- */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+main {
+    background-color: #ffffff;
+    font-size: 18px;
+}
+
+/* Paso 3: Ocultar el enlace de salto y hacerlo visible SOLO con el teclado (:focus) */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #bf0603;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s ease;
+}
+.skip-link:focus {
+    top: 0; /* Aparece en pantalla cuando el usuario pulsa TAB */
+}
+
+/* Paso 4: Estilizar la navegación de forma atractiva (mínimo 3 propiedades) */
+nav {
+    background-color: #1d3557;
+    padding: 15px;
+    border-bottom: 4px solid #e63946;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav a {
+    color: #f1faee;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Paso 5: Estilizar todas las imágenes usando el Modelo de Caja (border, padding, border-radius) */
+img {
+    border: 3px solid #457b9d;
+    padding: 5px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, border-color 0.3s ease; /* Para el paso 8 */
+}
+
+/* Paso 6: Aplicar propiedad de cuadrícula (Grid) de al menos dos columnas */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Crea columnas responsivas automáticamente */
+    gap: 20px;
+    padding: 20px;
+}
+.grid img {
+    width: 100%;
+}
+
+/* Paso 7: Aplicar propiedad Flexbox al menos a un elemento padre */
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+/* Paso 8: Efecto interactivo con la pseudo-clase :hover (Transición animada) */
+img:hover {
+    transform: scale(1.05); /* La imagen se agranda un poco al pasar el mouse */
+    border-color: #e63946;  /* Cambia el color del borde a rojo */
+}
+
+/* Paso 9: Implementar el selector avanzado :nth-child para dar radios de borde diferentes */
+.flex img:nth-child(odd) {
+    border-radius: 25px 0px 25px 0px; /* Esquinas redondeadas alternadas para impares */
+}
+.flex img:nth-child(even) {
+    border-radius: 0px 25px 0px 25px; /* Esquinas redondeadas alternadas para pares */
+}
